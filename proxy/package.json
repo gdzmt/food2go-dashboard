@@ -1,0 +1,25 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "A simple Express API that fetches data from another API using Axios",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/express-api.git"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "axios",
+    "node"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1"
+  }
+}

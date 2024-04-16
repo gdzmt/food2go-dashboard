@@ -2,7 +2,6 @@
 
 # dependencies
 /*/node_modules
-/proxy*
 *-lock.json
 /.pnp
 .pnp.js
