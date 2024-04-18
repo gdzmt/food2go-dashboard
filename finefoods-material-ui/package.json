@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && refine build",
-    "dev": "refine dev",
+    "start": "refine dev",
     "preview": "refine start",
     "refine": "refine"
   },
