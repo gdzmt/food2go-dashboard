@@ -1,12 +1,11 @@
-// AI-Assisted
 const express = require('express');
 const axios = require('axios');
 const app = express();
 const port = 5000;
 
 const API_URL = '';
-const API_KEY = '##';
-const API_SECRET = '##';
+const API_KEY = '';
+const API_SECRET = '';
 
 function extractKeys(input) {
   const regex = /`([^`]*)`/g;
@@ -42,15 +41,18 @@ function formatResponse(data, sortBy = 'COUNT') {
 app.use(express.json());
 
 app.get('/trendingProducts', async (req, res) => {
-  
+  const response = await axios.post(API_URL, { ksql: "SELECT * from ORDERCOUNTBYPRODUCT;" }, getReqConfig())
+  res.status(200).json(formatResponse(response?.data).slice(0, 5));
 });
 
 app.get('/trendingCustomers', async (req, res) => {
-  
+  const response = await axios.post(API_URL, { ksql: "SELECT * from ORDERTOTALBYCUSTOMER;" }, getReqConfig())
+  res.status(200).json(formatResponse(response?.data).slice(0, 5));
 });
 
 app.get('/trendingCities', async (req, res) => {
-  
+  const response = await axios.post(API_URL, { ksql: "SELECT * from ORDERTOTALBYCITY;" }, getReqConfig())
+  res.status(200).json(formatResponse(response?.data).slice(0, 5));
 });
 
 // Start the server
